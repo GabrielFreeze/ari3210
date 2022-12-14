@@ -12,9 +12,6 @@ import librosa.display
 import matplotlib.pyplot as plt
 from multiprocessing import Process, cpu_count
 
-
-
-
 N_MELS = 256
 MEL_SPEC_FRAME_SIZE = 1024
 SAMPLING_RATE = 16_000
@@ -111,7 +108,7 @@ def worker(start:int=0, end:int=1):
 
                 librosa.display.specshow(mel)
 
-                pylab.savefig(save_path, bbox_inches=None, pad_inches=0, dpi=15) #Save Image  
+                pylab.savefig(save_path, bbox_inches=None, pad_inches=0, dpi=25) #Save Image  
 
 # For loop that goes through the relative paths of every .wav file
 corpus_path = '..\\corpus'
@@ -153,7 +150,19 @@ if __name__ == '__main__':
     print(f'Finished multi-processing operation in {(time.time()-s)//60}mins')
     
     ######### MULTI-PROCESSING FINISHED #########
-    
+
+    #Some speakers are repeated and have different labels.
+    #Let's join the speakers together
+
+
+
+
+
+
+
+
+
+
     #For every split create a folder
 
     folder = os.path.join('..','data')
